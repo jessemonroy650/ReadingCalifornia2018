@@ -9,6 +9,8 @@ var readingAudio = {
     my_media     : null,  // links Cordova plugin object
     mediaTimer   : null,  // in memory timer
     mediaPointer : 'readingAudioPosition', // elementId
+    divStatus    : '',
+    divErr       : '',
 
     init : function (onScreenPtr) {
         if (onScreenPtr) {
@@ -17,7 +19,7 @@ var readingAudio = {
         readingAudio.mediaTimer = null;
     },
     // onSuccess Callback
-    onSuccess : function () {
+    onSuccess : function (stat) {
         var mediaStatus = {
             0 : 'none',     // Media.MEDIA_NONE    
             1 : 'starting', // Media.MEDIA_STARTING
@@ -25,7 +27,7 @@ var readingAudio = {
             3 : 'paused',   // Media.MEDIA_PAUSED  
             4 : 'stopped'   // Media.MEDIA_STOPPED 
         };
-
+        document.getElementById(readingAudio.divStatus).innerHTML = mediaStatus[stat];
     },
     // onError Callback 
     onError :   function (error) {
@@ -35,8 +37,7 @@ var readingAudio = {
             2 : 'decode',        // MediaError.MEDIA_ERR_DECODE 
             3 : 'none supported' // MediaError.MEDIA_ERR_NONE_SUPPORTED
         };
-
-
+        document.getElementById(readingAudio.divErr).innerHTML   = mediaError[error];
     },
     // Set audio position
     setAudioPosition : function (position) {
@@ -45,11 +46,13 @@ var readingAudio = {
     //
     // Play audio
     //
-    playAudio : function (src) {
+    playAudio : function (src, divS, divEr) {
         if (readingAudio.my_media == null) {
             // Create Media object from src
             readingAudio.my_media = new Media(src, onSuccess, onError);
         }
+        if (divS)  { readingAudio.divStatus = divS; }
+        if (divEr) { readingAudio.divErr    = divEr; }
         // else play current audio
         // Play audio
         readingAudio.my_media.play();
