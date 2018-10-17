@@ -9,14 +9,22 @@ var readingAudio = {
     my_media     : null,  // links Cordova plugin object
     mediaTimer   : null,  // in memory timer
     mediaPointer : 'readingAudioPosition', // elementId
+    runningStat  : '',
     divStatus    : '',
     divErr       : '',
 
-    init : function (onScreenPtr) {
+    init : function (runningStat, onScreenPtr) {
+        if (runningStat) {
+            readingAudio.runningStatus = runningStat;
+        }
         if (onScreenPtr) {
             readingAudio.mediaPointer = onScreenPtr;
         }
         readingAudio.mediaTimer = null;
+    },
+    // running status
+    runningStatus : function (status) {
+        document.getElementById(readingAudio.runningStat).innerHTML = status;
     },
     // onSuccess Callback
     onSuccess : function (stat) {
@@ -47,9 +55,10 @@ var readingAudio = {
     // Play audio
     //
     playAudio : function (src, divS, divEr) {
+        readingAudio.runningStatus("loading ...");
         if (readingAudio.my_media == null) {
             // Create Media object from src
-            readingAudio.my_media = new Media(src, readingAudio.onSuccess, readingAudio.onError, readingAudio.onSuccess);
+            readingAudio.my_media = new Media(src, readingAudio.onSuccess, readingAudio.onError, readingAudio.runningStatus);
         }
         if (divS)  { readingAudio.divStatus = divS; }
         if (divEr) { readingAudio.divErr    = divEr; }
