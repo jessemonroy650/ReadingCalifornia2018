@@ -24,7 +24,7 @@ var app = {
             el.classList.add('button-action');
         }
         //alert("toggleVolume:" + volume)
-        //readingAudio.volumeAudio(volume);		
+        readingAudio.volumeAudio(volume);		
     },
     //
     exitApp : function () {
