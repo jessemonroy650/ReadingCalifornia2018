@@ -88,6 +88,7 @@ var app = {
         // Play some sound
         //
         readingAudio.init('runningStatus');
-        readingAudio.play(cordova.file.applicationDirectory + app.audioFile, 'success', 'errStatus');
+        document.getElementById('runningStatus').innerHTML = 'deviceReady';
+        readingAudio.playAudio(cordova.file.applicationDirectory + app.audioFile, 'success', 'errStatus');
     }
 }
