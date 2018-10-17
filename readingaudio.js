@@ -9,13 +9,13 @@ var readingAudio = {
     my_media     : null,  // links Cordova plugin object
     mediaTimer   : null,  // in memory timer
     mediaPointer : 'readingAudioPosition', // elementId
-    runningStat  : '',
+    divRunning   : '',
     divStatus    : '',
     divErr       : '',
 
     init : function (runningStat, onScreenPtr) {
         if (runningStat) {
-            readingAudio.runningStatus = runningStat;
+            readingAudio.divRunning   = runningStat;
         }
         if (onScreenPtr) {
             readingAudio.mediaPointer = onScreenPtr;
@@ -24,7 +24,7 @@ var readingAudio = {
     },
     // running status
     runningStatus : function (status) {
-        document.getElementById(readingAudio.runningStat).innerHTML = status;
+        document.getElementById(readingAudio.divRunning).innerHTML = status;
     },
     // onSuccess Callback
     onSuccess : function (stat) {
@@ -64,7 +64,9 @@ var readingAudio = {
         if (divEr) { readingAudio.divErr    = divEr; }
         // else play current audio
         // Play audio
+        document.getElementById('runningStatus').innerHTML = 'loaded!';
         readingAudio.my_media.play();
+        document.getElementById('runningStatus').innerHTML = 'playing ... ' + src;
 
         // Update my_media position every second
         if (readingAudio.mediaTimer == null) {
