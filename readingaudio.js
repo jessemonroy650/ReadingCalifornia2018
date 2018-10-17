@@ -49,7 +49,7 @@ var readingAudio = {
     playAudio : function (src, divS, divEr) {
         if (readingAudio.my_media == null) {
             // Create Media object from src
-            readingAudio.my_media = new Media(src, onSuccess, onError);
+            readingAudio.my_media = new Media(src, readingAudio.onSuccess, readingAudio.onError, readingAudio.onSuccess);
         }
         if (divS)  { readingAudio.divStatus = divS; }
         if (divEr) { readingAudio.divErr    = divEr; }
