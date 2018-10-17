@@ -1,10 +1,7 @@
 var app = {
     version : '1.0.0',
     triggerEvent : 'click',
-    a1File  : "www/sounds/building_blocks.ogg",
-    a2File  : "www/sounds/platform_info.ogg",
-    a3File  : "www/sounds/platform_info_2.ogg",
-    a4File  : "www/sounds/PeppersPatch1.ogg",
+    a1File  : "www/sounds/PeppersPatch1.ogg",
     audioFile : "www/sounds/BuddyHolly-Everyday.ogg",
 	volume     : 1.0,
 
@@ -82,14 +79,11 @@ var app = {
     //
     onDeviceReady : function () {
         //alert("device ready.");
-        <!--
-        document.getElementById('isCordovaApp').innerHTML  = app.isCordovaApp();
-        document.getElementById('isKnownDevice').innerHTML = app.isKnownDevice(navigator.platform);
-        document.getElementById('appVersion').innerHTML    = app.version;
-        document.getElementById('myDirectory').innerHTML   = cordova.file.applicationDirectory;
-        -->
         // change from the default to a mobile device event
         app.triggerEvent = 'touchend';
+        document.getElementById('triggerEvent').innerHTML   = app.triggerEvent;
+        document.getElementById('appDirectory').innerHTML   = cordova.file.applicationDirectory;
+        document.getElementById('audioFile').innerHTML      = cordova.file.applicationDirectory + app.audioFile;
         //
         // Play some sound
         //
