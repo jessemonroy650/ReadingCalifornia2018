@@ -11,6 +11,10 @@
     <link href="res/drawable-mdpi/icon.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="css/buttons.css" />
     <link rel="stylesheet" href="css/app.css" />
+    <style>
+    .hidden {visibility:collapse;display:none;}
+    .expose {visibility:visible;display:block;} /* Here for completeness only. */
+    </style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="app.js"></script>
     <script type="text/javascript" charset="utf-8" src="readingaudio.js"></script>
@@ -40,7 +44,7 @@
             <a href=lesson4/img1.html><li class="button button-pill button-3d button-rounded button-caution button-jumbo lesson-menu-item">Advanced Sound Practice</li></a>
         </ul>
     </div>
-    <div>running status: <span id=runningStatus></span></div>
+    <div class=hidden>running status: <span id=runningStatus></span></div>
 </body>
     <script type="text/javascript">
     // The 'DOMContentLoaded' event fires before the 'deviceready'
