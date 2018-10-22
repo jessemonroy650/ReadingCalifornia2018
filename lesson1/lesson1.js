@@ -68,6 +68,7 @@ var lesson1 = {
 //
 function onDeviceReady() {
     //alert("device ready.");
+    lesson1.isMobileApp  = lesson1.isCordovaApp();
     // change from the default to a mobile device event
     lesson1.triggerEvent = 'touchend';
     lesson1.init(cordova.file.applicationDirectory + lesson1.audioFile);
