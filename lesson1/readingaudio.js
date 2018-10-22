@@ -64,7 +64,7 @@ var readingAudio = {
     // Play audio
     //
     playAudio : function (src, divS, divEr) {
-        document.getElementById('runningStatus').innerHTML = 'loading ...';
+        document.getElementById('runningStatus').innerHTML = 'loading ... ' + src;
         if (readingAudio.my_media == null) {
             // Create Media object from src
             readingAudio.my_media = new Media(src, readingAudio.onSuccess, readingAudio.onError, readingAudio.runningStatus);

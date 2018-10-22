@@ -72,6 +72,9 @@ var app = {
         //alert("device ready.");
         // change from the default to a mobile device event
         app.triggerEvent = 'touchend';
+        // vibrate
+        document.getElementById('runningStatus').innerHTML = navigator.vibrate;
+        navigator.vibrate(1500);
         //
         // Play some sound
         //
