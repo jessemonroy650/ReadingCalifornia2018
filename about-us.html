@@ -10,6 +10,7 @@
     <style>
     </style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="about.js"></script>
     <script type="text/javascript">
     </script>
 
@@ -25,7 +26,7 @@
     </table>
 
     <ul class=menu>
-        <a href=index.html><li class="button button-pill button-primary button-large float-right" style="margin-right:0.1em;">Home</li></a>
+        <li id=home class="button button-pill button-primary button-large float-right" style="margin-right:0.1em;">Home</li>
     </ul>
 <div class="spacer clear">&nbsp;</div>
 <div class=stock_font>
@@ -39,10 +40,29 @@ Reading essentials include: 1) 26 Sounds 2) 3 Letter Blending with short vowels 
 <p />
 Enjoy and all the best from Reading California.
 </div>
+
+    <p class=spacer />
+    <b>navigator.appCodeName:</b> <span id=navCodeName>false</span><br>
+    <b>navigator.appName:</b> <span id=navName>false</span><br>
+    <b>navigator.appVersion:</b> <span id=navVersion>false</span><br>
+    <b>navigator.platform:</b>  <span id=navPlatform>false</span><br>
+    <b>isCordovaApp:</b> <span id=isCordovaApp>false</span><br>
+    <b>isKnownDevice:</b> <span id=isKnownDevice>false</span><br>
+
+    <div>triggerEvent <span id=triggerEvent></span></div>
+    <div>appDirectory <span id=appDirectory></span></div>
+
+
 <div id=version>
-Version 1.0.0 2018-10-16-23:47:38
+Version 1.0.0 2018-10-22-01:36:01
 </div>
 </body>
+    <script type="text/javascript">
+    // The 'DOMContentLoaded' event fires before the 'deviceready'
+    document.addEventListener('DOMContentLoaded', app.onDOMContentLoaded, false);
+    // Wait for PhoneGap to load
+    document.addEventListener('deviceready', app.onDeviceReady, false);
+    </script>
 </html>
 
 

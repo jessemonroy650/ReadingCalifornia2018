@@ -1,8 +1,8 @@
 var app = {
     version : '1.0.0',
     triggerEvent : 'click',
-    a1File  : "www/sounds/PeppersPatch1.ogg",
-    audioFile : "www/sounds/BuddyHolly-Everyday.ogg",
+    a1File     : "www/sounds/PeppersPatch1.ogg",
+    audioFile  : "www/sounds/BuddyHolly-Everyday.ogg",
 	volume     : 1.0,
 
 
@@ -23,7 +23,6 @@ var app = {
             el.classList.remove('button-caution');
             el.classList.add('button-action');
         }
-        //alert("toggleVolume:" + volume)
         readingAudio.volumeAudio(volume);		
     },
     //
@@ -57,7 +56,6 @@ var app = {
     //
     onLoad : function () {
         //alert("body loaded.");
-        // onDeviceReady();
     },
     //
     hook : function () {
@@ -67,13 +65,6 @@ var app = {
     },
     //
     onDOMContentLoaded : function () {
-        /*
-        document.getElementById('navCodeName').innerHTML = navigator.appCodeName;
-        document.getElementById('navName').innerHTML     = navigator.appName;
-        document.getElementById('navVersion').innerHTML  = navigator.appVersion;
-        document.getElementById('navPlatform').innerHTML = navigator.platform;
-        */
-        //
         app.hook();
     },
     //
@@ -81,14 +72,10 @@ var app = {
         //alert("device ready.");
         // change from the default to a mobile device event
         app.triggerEvent = 'touchend';
-        document.getElementById('triggerEvent').innerHTML   = app.triggerEvent;
-        document.getElementById('appDirectory').innerHTML   = cordova.file.applicationDirectory;
-        document.getElementById('audioFile').innerHTML      = cordova.file.applicationDirectory + app.audioFile;
         //
         // Play some sound
         //
         readingAudio.init('runningStatus');
-        document.getElementById('runningStatus').innerHTML = 'deviceReady';
         readingAudio.playAudio(cordova.file.applicationDirectory + app.audioFile, 'success', 'errStatus');
     }
 }

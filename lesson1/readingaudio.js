@@ -1,10 +1,11 @@
-        //
-        // Audio player
-        //
-        // v1.0.1 - 2013-01-26 - removed alert() from onError()
-        // v1.1.0 - 2015-03-23 - added volume control (should be global)
-        // v1.2.0 - 2018-09-14 - uncomment onError()
-        // v2.0.0 - 2018-10-16 - change to standalone Object module
+//
+//    Audio player
+//
+// v1.0.1 - 2013-01-26 - removed alert() from onError()
+// v1.1.0 - 2015-03-23 - added volume control (should be global)
+// v1.2.0 - 2018-09-14 - uncomment onError()
+// v2.0.0 - 2018-10-16 - change to standalone Object module
+// v2.0.1 - 2018-10-17 - update for general use; make sure there is a div Id when updating
 var readingAudio = {
     my_media     : null,  // links Cordova plugin object
     mediaTimer   : null,  // in memory timer
@@ -24,7 +25,9 @@ var readingAudio = {
     },
     // running status
     runningStatus : function (status) {
-        document.getElementById(readingAudio.divRunning).innerHTML = status;
+        if (readingAudio.divRunning) {
+            document.getElementById(readingAudio.divRunning).innerHTML = status;
+        }
     },
     // onSuccess Callback
     onSuccess : function (stat) {
@@ -35,7 +38,9 @@ var readingAudio = {
             3 : 'paused',   // Media.MEDIA_PAUSED  
             4 : 'stopped'   // Media.MEDIA_STOPPED 
         };
-        document.getElementById(readingAudio.divStatus).innerHTML = mediaStatus[stat];
+        if (readingAudio.divStatus) {
+            document.getElementById(readingAudio.divStatus).innerHTML = mediaStatus[stat];
+        }
     },
     // onError Callback 
     onError :   function (error) {
@@ -45,17 +50,21 @@ var readingAudio = {
             2 : 'decode',        // MediaError.MEDIA_ERR_DECODE 
             3 : 'none supported' // MediaError.MEDIA_ERR_NONE_SUPPORTED
         };
-        document.getElementById(readingAudio.divErr).innerHTML   = mediaError[error];
+        if (readingAudio.divErr) {
+            document.getElementById(readingAudio.divErr).innerHTML   = mediaError[error];
+        }
     },
     // Set audio position
     setAudioPosition : function (position) {
-        document.getElementById(readingAudio.mediaPointer).innerHTML = position;
+        if (readingAudio.mediaPointer) {
+            document.getElementById(readingAudio.mediaPointer).innerHTML = position;
+        }
     },
     //
     // Play audio
     //
     playAudio : function (src, divS, divEr) {
-        document.getElementById('runningStatus').innerHTML = 'loading ...';
+        //document.getElementById('runningStatus').innerHTML = 'loading ...';
         if (readingAudio.my_media == null) {
             // Create Media object from src
             readingAudio.my_media = new Media(src, readingAudio.onSuccess, readingAudio.onError, readingAudio.runningStatus);
@@ -64,9 +73,7 @@ var readingAudio = {
         if (divEr) { readingAudio.divErr    = divEr; }
         // else play current audio
         // Play audio
-        document.getElementById('runningStatus').innerHTML = 'loaded!';
         readingAudio.my_media.play();
-        document.getElementById('runningStatus').innerHTML = 'playing ... ' + src;
 
         // Update my_media position every second
         if (readingAudio.mediaTimer == null) {

@@ -2,13 +2,15 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Reading California</title>
+    <meta http-equiv="Content-Security-Policy" 
+             content="default-src *;  media-src *;
+                      style-src * 'self' 'unsafe-inline' 'unsafe-eval'; 
+                      script-src * 'self' 'unsafe-inline' 'unsafe-eval';">
     <meta name="viewport" content="width=device-width">
     <link href="res/drawable-ldpi/icon.png" rel="icon" type="image/x-icon" />
     <link href="res/drawable-mdpi/icon.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="css/buttons.css" />
     <link rel="stylesheet" href="css/app.css" />
-    <style>
-    </style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="app.js"></script>
     <script type="text/javascript" charset="utf-8" src="readingaudio.js"></script>
@@ -16,10 +18,9 @@
 <body>
     <table border=0 width=100% cellpading=5px cellspacing=5px>
         <tr>
-        <td align=left valign=center width=90px><a href="http://www.pepperspatch.com/"></a><img border=0 width=90px height=72px src=res/drawable-hdpi/icon.png></td>
+        <td align=left valign=center width=90px><img border=0 width=90px height=72px src=res/drawable-hdpi/icon.png></td>
         <td align=left valign=center>
             <div class=title>Reading California<span style=font-size:small;> &copy;2018</span></div>
-			<!-- <div class=subtitle>Teaching Reading to the Masses</div> -->
         </td>
     </table>
 
@@ -31,7 +32,7 @@
     <div class="spacer clear">&nbsp;</div>
     <div class=target>
         <ul class=lesson-menu>
-            <a href=lesson1/img1.html><li class="button button-pill button-3d button-rounded button-primary button-jumbo lesson-menu-item">26 Sounds</li></a>
+            <a href=lesson1/img01.html><li class="button button-pill button-3d button-rounded button-primary button-jumbo lesson-menu-item">26 Sounds</li></a>
             <a href=lesson2/img1.html><li class="button button-pill button-3d button-rounded button-action button-jumbo lesson-menu-item">3 Letter Blending</li></a>
             <!-- This contains multiple lessons. -->
             <a href=lesson3/index.html><li class="button button-pill button-3d button-rounded button-highlight button-jumbo lesson-menu-item">Reading Practice</li></a>
@@ -39,14 +40,6 @@
             <a href=lesson4/img1.html><li class="button button-pill button-3d button-rounded button-caution button-jumbo lesson-menu-item">Advanced Sound Practice</li></a>
         </ul>
     </div>
-
-    <div>triggerEvent <span id=triggerEvent></span></div>
-    <div>appDirectory <span id=appDirectory></span></div>
-    <div>audioFile <span id=audioFile></span></div>
-    <div>runningStatus <span id=runningStatus></span></div>
-    <div>success <span id=success></span></div>
-    <div>errStatus <span id=errStatus></span></div>
-
 </body>
     <script type="text/javascript">
     // The 'DOMContentLoaded' event fires before the 'deviceready'
