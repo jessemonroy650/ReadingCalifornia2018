@@ -69,13 +69,14 @@ var app = {
     },
     //
     onDeviceReady : function () {
-        //alert("device ready.");
+        alert("device ready.");
         // change from the default to a mobile device event
         app.triggerEvent = 'touchend';
         //
         // Play some sound
         //
         readingAudio.init('runningStatus');
+        document.getElementById('runningStatus').innerHTML = cordova.file.applicationDirectory + app.audioFile;
         readingAudio.playAudio(cordova.file.applicationDirectory + app.audioFile, 'success', 'errStatus');
     }
 }
