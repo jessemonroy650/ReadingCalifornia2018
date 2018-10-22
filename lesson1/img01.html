@@ -37,10 +37,12 @@
 	  </div>
     </center>
   </div>
+  <div>running status: <span id=runningStatus></span></div>
 </body>
   <script type="text/javascript">
     //
     function onDOMContentLoaded() {
+        document.getElementById('runningStatus').innerHTML = "onDOMContentLoaded()";
         lesson1.home      = '../index.html';
         lesson1.forward   = 'img02.html';
         lesson1.back      = '../index.html';
@@ -53,6 +55,7 @@
             lesson1.audioFile = 'sounds/intro.ogg';
             lesson1.play();
         }
+        document.getElementById('runningStatus').innerHTML = lesson1.audioFile;
     };
     // The 'DOMContentLoaded' event fires before the 'deviceready'
     document.addEventListener('DOMContentLoaded', onDOMContentLoaded, false);

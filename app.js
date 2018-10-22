@@ -69,7 +69,7 @@ var app = {
     },
     //
     onDeviceReady : function () {
-        alert("device ready.");
+        //alert("device ready.");
         // change from the default to a mobile device event
         app.triggerEvent = 'touchend';
         //
