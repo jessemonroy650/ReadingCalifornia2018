@@ -20,7 +20,7 @@ var lesson1 = {
     goForward : function () { window.location = lesson1.forward; },
     play      : function () {
         if (lesson1.isMobileApp) {
-            readingAudio.playAudio(cordova.file.applicationDirectory + lesson1.audioFile);
+            readingAudio.playAudio(lesson1.audioFile);
         } else {
             // This is a WebApp.
            var player = new Audio();
