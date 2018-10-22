@@ -12,18 +12,18 @@ var app = {
     //
     toggleVolume : function () {
         el = document.getElementById('volume');
-        if (volume > 0 ) {
-            volume = 0.0;
+        if (app.volume > 0 ) {
+            app.volume = 0.0;
             el.innerHTML = 'Audio&nbsp;is&nbsp;Off';
             el.classList.remove('button-action');
             el.classList.add('button-caution');
         } else {
-            volume = 1.0;
+            app.volume = 1.0;
             el.innerHTML = 'Audio&nbsp;is&nbsp;On';
             el.classList.remove('button-caution');
             el.classList.add('button-action');
         }
-        readingAudio.volumeAudio(volume);		
+        readingAudio.volumeAudio(app.volume);		
     },
     //
     exitApp : function () {
