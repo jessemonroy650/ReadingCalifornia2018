@@ -1,28 +1,31 @@
-        body {margin:0px;}
-        a {text-decoration:none;color:#000000;}
-        h2 {margin:10px;}
-        .copyright {padding:5px;font-style:italic;font-size:large;}
-		.email-link {font-size:small;}
-        .feedbackbox {margin:20px;padding:10px;}
-        .clear {clear:both;}
-        .banner {}
-        .banner_i {float:left;}
-        .title {font-size:x-large;font-weight:bold;}
-        .subtitle {font-size:medium;font-style:italic;}
-        .target {padding:5px;}
-        .float-left {float:left;}
-        .float-right {float:right;}
-        .sndplayer {float:right;background-color:#0000aa;}
-		.spacer {height:0.5em;}
-		#home-icon {margin:1% 2%;}
-        ul.menu {margin:0 5%;padding:0;list-style-type:none;}
-		li.menu-item {margin:0;}
-        li.lesson-menu-item {width:80%;margin:1% 10%;padding:0.1em;}
-		@media only screen and (min-width:321px) and (max-width:600px) {
-			li.menu-item {margin:0;font-size:x-large;}
-        	li.lesson-menu-item {margin:1% 5%;font-size:x-large;}
-		}
-		@media only screen and (max-width:320px) {
-			li.menu-item {margin:0;font-size:medium;}
-        	li.lesson-menu-item {margin:1% 2%;font-size:medium;}
-		}
+body {margin:0px;}
+a {text-decoration:none;color:#000000;}
+h2 {margin:10px;}
+.copyright {padding:5px;font-style:italic;font-size:large;}
+.email-link {font-size:small;}
+.feedbackbox {margin:20px;padding:10px;}
+.clear {clear:both;}
+.banner {}
+.banner_i {float:left;}
+.title {font-size:x-large;font-weight:bold;}
+.subtitle {font-size:medium;font-style:italic;}
+.target {padding:5px;}
+.float-left {float:left;}
+.float-right {float:right;}
+.sndplayer {float:right;background-color:#0000aa;}
+.spacer {height:0.5em;}
+.debug {visibility:collapse;display:none;}
+.hidden {visibility:collapse;display:none;}
+.expose {visibility:visible;display:block;} /* Here for completeness only. */
+#home-icon {margin:1% 2%;}
+ul.menu {margin:0 5%;padding:0;list-style-type:none;}
+li.menu-item {margin:0;}
+li.lesson-menu-item {width:80%;margin:1% 10%;padding:0.1em;}
+@media only screen and (min-width:321px) and (max-width:600px) {
+    li.menu-item {margin:0;font-size:x-large;}
+    li.lesson-menu-item {margin:1% 5%;font-size:x-large;}
+}
+@media only screen and (max-width:320px) {
+    li.menu-item {margin:0;font-size:medium;}
+    li.lesson-menu-item {margin:1% 2%;font-size:medium;}
+}
