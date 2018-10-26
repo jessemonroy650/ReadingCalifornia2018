@@ -17,6 +17,7 @@
     document.addEventListener("deviceready", onDeviceReady, false);
     // PhoneGap is ready
     function onDeviceReady() {
+        FastClick.attach(document.body);
         // Don't do much with this right now.
         playAudio("/android_asset/www/lesson1/sounds/l.ogg");
     }
