@@ -1,0 +1,15 @@
+= NOTES =
+Date: 2018-10-26
+
+Changes made 
+remove 300m delay & fix nonresponsive "replay" button so it does something
+# fixit.sh - add: <script type="text\/javascript" charset="utf-8" src="fastclick.js"><\/script>
+# fixit2.sh - add: FastClick.attach(document.body);
+# fixit3.sh - remove: onclick="javascript:onDeviceReady();
+            - append to replay button: <\\/a>
+            - insert to replay button: <a href=".\/CHANGEME">
+            - replace: CHANGEME with: name of file 
+
+When in landscape mode, sometimes (some) devices cut off bottom of page
+# lesson1.css - change: #topSpacer {height:3em;}
+              - to (when max-width:495px): #topSpacer {height:1em;}
